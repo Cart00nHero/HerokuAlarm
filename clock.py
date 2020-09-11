@@ -6,7 +6,6 @@ import urllib.request
 
 sched = BackgroundScheduler()
 
-
 # @sched.scheduled_job('interval', day_of_week='mon-fri', minutes=20)
 @sched.scheduled_job('cron', day_of_week='mon-fri', minute='*/20')
 def timed_job():
@@ -17,6 +16,5 @@ def timed_job():
     # conn = urllib.request.urlopen(url2)
     today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(today, 'This job is run every work day twenty minutes.')
-
 
 sched.start()
