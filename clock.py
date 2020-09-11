@@ -4,6 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import time
 import urllib.request
 
+
 sched = BackgroundScheduler()
 
 # @sched.scheduled_job('interval', day_of_week='mon-fri', minutes=20)
