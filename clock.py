@@ -1,11 +1,11 @@
 # https://ithelp.ithome.com.tw/articles/10218874?sc=pt
-# from apscheduler.schedulers.blocking import BlockingScheduler
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.blocking import BlockingScheduler
+# from apscheduler.schedulers.background import BackgroundScheduler
 import time
 import urllib.request
 
 
-sched = BackgroundScheduler()
+sched = BlockingScheduler()
 
 # @sched.scheduled_job('interval', day_of_week='mon-fri', minutes=20)
 @sched.scheduled_job('cron', day_of_week='mon-fri', minute='*/20')
